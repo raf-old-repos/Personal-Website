@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import constructionGif from "../assets/download.gif";
 
 export default function Home() {
   return (
@@ -30,6 +31,11 @@ export default function Home() {
           <span className={styles.exampleLink}>here</span>
         </a>
       </h3>
+      <img
+        className={styles.gifContainer}
+        src={constructionGif}
+        alt="Loading..."
+      />
     </div>
   );
 }
