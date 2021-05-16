@@ -11,6 +11,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1>In construction 🚧</h1>
+      <h3>
+        Meanwhile, you can checkout my old portfolio{" "}
+        <a href="https://gitter499.github.io/">here</a>
+      </h3>
     </div>
   );
 }
