@@ -53,7 +53,7 @@ const Card: React.FC<Props> = ({ MainHeader }) => {
             {MainHeader}
           </h1>
         </div>
-        <div className="flex md:flex-row md:justify-center  pr-96 text-4xl ">
+        <div className="flex md:flex-row md:justify-center  pr-40 text-4xl ">
           <ul className="flex md:flex-row">
             {links.map((link, idx) => (
               <li key={idx} className="px-5">
