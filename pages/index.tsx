@@ -1,16 +1,16 @@
 import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
-import constructionGif from "../assets/download.gif";
+import Card from "../components/Card";
+import React from "react";
+import MainLayout from "../layouts/main.layout";
 
-export default function Home() {
+const Home = () => {
   return (
-    <div className={styles.container}>
+    <React.Fragment>
       <Head>
         <title>Rafayel Amirkhanyan</title>
         <meta property="og:title" content="Rafayel Amirkhanyan" />
         <meta property="og:site_name" content="Rafayel Amirkhanyan Portfolio" />
-        <meta property="og:url" content="https://rafayel.vercel.app/" />
+        <meta property="og:url" content="https://rafayel.codes/" />
         <meta
           property="og:description"
           content="Hi! My name is Rafayel Amirkhanyan and here is my home on the internet!"
@@ -20,22 +20,11 @@ export default function Home() {
 
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={styles.cursor}>
-        <h1 className={styles.example}>
-          Under construction <span className={styles.construction}>🚧</span>
-        </h1>
-      </div>
-      <h3>
-        Meanwhile, you can checkout my old portfolio{" "}
-        <a href="https://gitter499.github.io/">
-          <span className={styles.exampleLink}>here</span>
-        </a>
-      </h3>
-      <img
-        className={styles.gifContainer}
-        src={constructionGif}
-        alt="Loading..."
-      />
-    </div>
+      <MainLayout>
+        <Card MainHeader="Rafayel Amirkhanyan"></Card>
+      </MainLayout>
+    </React.Fragment>
   );
-}
+};
+
+export default Home;
