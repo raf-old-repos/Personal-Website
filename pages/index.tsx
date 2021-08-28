@@ -2,8 +2,31 @@ import Head from "next/head";
 import Card from "../components/Card";
 import React from "react";
 import MainLayout from "../layouts/main.layout";
+import { Link } from "../components/Link";
 
 const Home = () => {
+  const links: Array<Link> = [
+    {
+      name: "Instagram",
+      icon: "insta",
+      url: "https://www.instagram.com/rafayel.19/",
+    },
+    {
+      name: "Github",
+      icon: "github",
+      url: "https://github.com/Gitter499",
+    },
+    {
+      name: "Discord",
+      icon: "discord",
+      url: "https://discord.com/"
+    },
+    {
+      name: "Facebook",
+      icon: "facebook",
+      url: "https://www.facebook.com/rafayel.amirkhanyan/",
+    },
+  ];
   return (
     <React.Fragment>
       <Head>
@@ -21,7 +44,7 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <MainLayout>
-        <Card MainHeader="Rafayel Amirkhanyan"></Card>
+        <Card mainheader="Rafayel Amirkhanyan" links={links} iconURL="https://github.com/Gitter499.png" />
       </MainLayout>
     </React.Fragment>
   );
