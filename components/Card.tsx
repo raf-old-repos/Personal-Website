@@ -1,8 +1,10 @@
-import React, { Suspense } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import LinkButton from "./LinkButton";
 import { Link } from "./Link";
 import dynamic from "next/dynamic";
+import { useEffect } from "react";
+
 // import your component with dynamic and disable SSR
 const Tilty = dynamic(() => import("react-tilty"), { ssr: false });
 
@@ -13,6 +15,14 @@ interface Props {
 }
 
 const Card: React.FC<Props> = ({ mainheader, links, iconURL }) => {
+  const [rickRoll, setRickRoll] = useState(false);
+
+  useEffect(() => {
+    const chance =
+      Math.floor(Math.random() * 10) == Math.floor(Math.random() * 10);
+    setRickRoll(chance);
+    return () => {};
+  }, []);
   return (
     <React.Fragment>
       <div className="flex flex-col justify-center items-center h-screen w-screen border-4 dark:border-white border-black md:h-screen rounded-lg dark:text-white text-black overflow-scroll md:pt-0">
@@ -20,15 +30,26 @@ const Card: React.FC<Props> = ({ mainheader, links, iconURL }) => {
           <div className="flex flex-col justify-center items-center  md:flex md:flex-cols md:justify-center md:items-center md:pl-36">
             {/* @ts-ignore */}
             <Tilty max={40}>
-              <Image
-                className="rounded-full"
-                src={iconURL}
-                alt="Some asshole's profile pic"
-                width={210}
-                height={210}
-                placeholder="blur"
-                loading="eager"
-              />
+              {!rickRoll ? (
+                <Image
+                  className="rounded-full"
+                  src={iconURL}
+                  alt="Some asshole's profile pic"
+                  width={210}
+                  height={210}
+                  placeholder="blur"
+                  loading="eager"
+                />
+              ) : (
+                <Image
+                  className="rounded-full"
+                  src={"https://media.giphy.com/media/Ju7l5y9osyymQ/giphy.gif?cid=ecf05e47hyo0w1b48x4qw90245vp7ppud9v160kfl10uwaf5&rid=giphy.gif&ct=g"}
+                  alt="Got yo ass"
+                  width={210}
+                  height={210}
+                  
+                />
+              )}
             </Tilty>
           </div>
 
