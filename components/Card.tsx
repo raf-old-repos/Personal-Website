@@ -15,7 +15,7 @@ interface Props {
 const Card: React.FC<Props> = ({ mainheader, links, iconURL }) => {
   return (
     <React.Fragment>
-      <div className="flex flex-col justify-center items-center h-screen w-screen border-4 dark:border-white border-black md:h-screen rounded-lg dark:text-white text-black overflow-scroll">
+      <div className="flex flex-col justify-center items-center h-screen w-screen border-4 dark:border-white border-black md:h-screen rounded-lg dark:text-white text-black overflow-scroll md:pt-0">
         <div className="md:flex md:flex-row md:pt-40 pt-32 ">
           <div className="flex flex-col justify-center items-center  md:flex md:flex-cols md:justify-center md:items-center md:pl-36">
             {/* @ts-ignore */}
@@ -32,7 +32,7 @@ const Card: React.FC<Props> = ({ mainheader, links, iconURL }) => {
             </Tilty>
           </div>
 
-          <h1 className="flex flex-col text-center justify-center items-center pt-10 pb-10 md:pb-0 md:pt-0 md:flex md:flex-cols md:pl-14 md:justify-center md:items-center text-3xl md:text-7xl font-regular">
+          <h1 className="flex flex-col text-center justify-center items-center pt-5 pb-10 md:pb-0 md:pt-0 md:flex md:flex-cols md:pl-14 md:justify-center md:items-center text-3xl md:text-7xl font-regular">
             {mainheader}
           </h1>
         </div>
