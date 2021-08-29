@@ -36,7 +36,7 @@ const Card: React.FC<Props> = ({ mainheader, links, iconURL }) => {
             {mainheader}
           </h1>
         </div>
-        <div className="md:flex md:flex-row md:justify-center md:pr-10 md:pt-5 text-4xl ">
+        <div className="mb-10 md:flex md:flex-row md:justify-center md:pr-10 md:pt-5 text-4xl ">
           <ul className="flex flex-row flex-wrap justify-center md:flex md:flex-row ">
             {links.map((link, idx) => (
               <li key={idx} className="p-5 md:px-5">
