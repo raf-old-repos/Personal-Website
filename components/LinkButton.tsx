@@ -19,21 +19,22 @@ const LinkButton: React.FC<Props> = ({ name, link, icon }) => {
     <React.Fragment>
       {/* @ts-ignore */}
       <Tilty max={40}>
-        {(() => {
-          switch (icon) {
-            case "insta":
-              return <AiOutlineInstagram />;
-            case "discord":
-              return <RiDiscordLine />;
-            case "github":
-              return <FiGithub />;
-            case "facebook":
-              return <FaFacebook />;
-          }
-        })()}
-        <Link href={link}>
-          <a className="text-xl">{name}</a>
-        </Link>
+        <a className="text-3xl" href={link}>
+          {(() => {
+            switch (icon) {
+              case "insta":
+                return <AiOutlineInstagram />;
+              case "discord":
+                return <RiDiscordLine />;
+              case "github":
+                return <FiGithub />;
+              case "facebook":
+                return <FaFacebook />;
+            }
+          })()}
+
+          {name}
+        </a>
       </Tilty>
     </React.Fragment>
   );
