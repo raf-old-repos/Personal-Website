@@ -39,7 +39,7 @@ const Card: React.FC<Props> = ({ mainheader, links, iconURL }) => {
         <div className="mb-36 md:flex md:flex-row md:justify-center md:pr-10 md:pt-5 text-4xl ">
           <ul className="flex flex-row flex-wrap justify-center md:flex md:flex-row ">
             {links.map((link, idx) => (
-              <li key={idx} className="px-5 md:px-5">
+              <li key={idx} className="p-5 md:px-5">
                 <LinkButton name={link.name} link={link.url} icon={link.icon} />
               </li>
             ))}
