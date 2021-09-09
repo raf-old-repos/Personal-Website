@@ -9,3 +9,34 @@ datasource db {
 generator client {
   provider = "prisma-client-js"
 }
+
+model BlogTag {
+  id        Int      @id @default(autoincrement())
+  tagName   String   @unique
+  createdAt DateTime @default(now()) @map(name: "created_at")
+  updatedAt DateTime @updatedAt @map(name: "updated_at")
+  BlogPost   BlogPost? @relation(fields: [blogPostId], references: [id])
+  blogPostId Int?
+}
+
+model BlogPost {
+  id        Int       @id @default(autoincrement())
+  title     String
+  tags      BlogTag[]
+  author    User[]
+  content   String?
+  links     String[]
+  createdAt DateTime  @default(now()) @map(name: "created_at")
+  updatedAt DateTime  @updatedAt @map(name: "updated_at")
+}
+
+model User {
+  id        Int        @id @default(autoincrement())
+  name      String?
+  email     String?    @unique
+  createdAt DateTime   @default(now()) @map(name: "created_at")
+  updatedAt DateTime   @updatedAt @map(name: "updated_at")
+  posts     BlogPost[]
+
+  @@map(name: "users")
+}
