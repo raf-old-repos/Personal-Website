@@ -1,6 +1,6 @@
 import useSWR from "swr"
-import { fetcher } from "../../components/util/fetcher"
-import { RepoData } from "../../types/RepoData"
+import { fetcher } from "../components/util/fetcher"
+import { RepoData } from "../types/RepoData"
 
 interface RepoType {
     data?: RepoData
