@@ -53,7 +53,7 @@ const Card: React.FC<Props> = ({ mainheader, links, iconURL }) => {
             </Tilty>
           </div>
 
-          <h1 className="flex flex-col text-center justify-center items-center pt-5 pb-10 md:pb-0 md:pt-0 md:flex md:flex-cols md:pl-14 md:justify-center md:items-center text-3xl md:text-7xl font-regular">
+          <h1 className="flex flex-col text-center justify-center items-center pt-10 pb-10 md:pb-0 md:pt-0 md:flex md:flex-cols md:pl-14 md:justify-center md:items-center text-3xl md:text-7xl font-regular">
             {mainheader}
           </h1>
         </div>
