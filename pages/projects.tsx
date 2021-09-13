@@ -3,14 +3,19 @@ import React from "react"
 import ProjectCard from "../components/ProjectCard"
 import ProjectLayout from "../layouts/project.layout"
 import { useRepo } from "../hooks/useRepo"
+import { RepoType } from '../types/RepoType'
+import { RepoData } from "../types/RepoData"
 
-const Projects = (props) => {
+const Projects: React.FC<RepoType> = ({ data, isError, isLoading }) => {
     return (
         <ProjectLayout>
-            {props.isError}
-            {!props.isLoading && (
-                <ProjectCard {...props.data}/>
-            )}
+            {isError ? <div> error </div> :
+                isLoading && (
+                    data.map((repo: RepoData, idx: number) => (
+                        <ProjectCard key={idx} {...repo} />
+                        )
+                    )
+                )}
 
         </ProjectLayout>
     )
@@ -19,7 +24,6 @@ const Projects = (props) => {
 export const getStaticProps: GetStaticProps = async () => {
 
     const { data, isError, isLoading } = useRepo(process.env.GITHUB_REPOS_URL)
-
 
     return {
         props: {
