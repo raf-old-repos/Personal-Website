@@ -5,11 +5,11 @@ import { RepoType } from "../types/RepoType"
 
 
 
-export const useRepo = (baseURL: string): RepoType => {
+const useRepo = (baseURL: string): RepoType => {
     const { data: { data }, error } = useSWR(baseURL, fetcher);
     const repoData: RepoData[] = []
 
-    data.forEach((repo, idx) => {
+    data.forEach((repo) => {
         repoData.push({
             fullName: repo["full_name"],
             description: repo["description"],
@@ -30,3 +30,4 @@ export const useRepo = (baseURL: string): RepoType => {
 
 
 }
+export default useRepo
